@@ -1,0 +1,14 @@
+dataSource:
+  spring:
+    driverClassName : com.mysql.jdbc.Driver
+    url: jdbc:mysql://
+    username :
+    password :
+    initialSize: 5
+    minIdle: 1
+    maxActive: 20
+
+hibernate:
+  ddlAuto: none
+  showSql: true
+  formatSql: true

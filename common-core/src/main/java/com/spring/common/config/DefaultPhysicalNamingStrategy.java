@@ -4,7 +4,7 @@
  * License: GNU Lesser General Public License (LGPL), version 2.1 or later.
  * See the lgpl.txt file in the root directory or <http://www.gnu.org/licenses/lgpl-2.1.html>.
  */
-package com.spring.config;
+package com.spring.common.config;
 
 import org.apache.commons.lang3.StringUtils;
 import org.hibernate.boot.model.naming.Identifier;
@@ -60,7 +60,7 @@ public class DefaultPhysicalNamingStrategy implements PhysicalNamingStrategy {
 
 	private static Map<String, String> buildAbbreviationMap() {
 		TreeMap<String, String> abbreviationMap = new TreeMap<>(String.CASE_INSENSITIVE_ORDER);
-		abbreviationMap.put("number", "num");
+//		abbreviationMap.put("number", "num");
 		return abbreviationMap;
 	}
 

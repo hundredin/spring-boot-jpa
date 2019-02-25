@@ -1,6 +1,6 @@
-package com.spring.repository;
+package com.spring.common.repository;
 
-import com.spring.domain.User;
+import com.spring.common.domain.User;
 
 import java.util.List;
 

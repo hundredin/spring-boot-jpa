@@ -1,0 +1,7 @@
+hibernate:
+  useSqlComments: true
+  idNewGeneratorMapping: true
+  dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+  physicalNamingStrategy: com.spring.config.SpringPhysicalNamingStrategy
+  validationGroupPrePersist: javax.validation.groups.Default
+  validationGroupPreUpdate: javax.validation.groups.Default

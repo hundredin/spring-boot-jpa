@@ -1,4 +1,4 @@
-package com.spring.domain;
+package com.spring.common.domain;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.springframework.data.jpa.domain.AbstractAuditable;

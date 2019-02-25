@@ -1,7 +1,7 @@
-package com.spring.repository;
+package com.spring.common.repository;
 
 import com.github.springtestdbunit.DbUnitTestExecutionListener;
-import com.spring.CoreApplication;
+import com.spring.common.CoreApplication;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.TestExecutionListeners;

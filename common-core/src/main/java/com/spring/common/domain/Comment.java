@@ -1,4 +1,4 @@
-package com.spring.domain;
+package com.spring.common.domain;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

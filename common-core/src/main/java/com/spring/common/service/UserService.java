@@ -1,7 +1,7 @@
-package com.spring.service;
+package com.spring.common.service;
 
-import com.spring.domain.User;
-import com.spring.repository.UserRepository;
+import com.spring.common.repository.UserRepository;
+import com.spring.common.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -9,12 +9,11 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Service
-public class UserServiceServiceImpl implements UserService {
+public class UserService {
 
 	@Autowired
-	UserRepository userRepository;
+    UserRepository userRepository;
 
-	@Override
 	@Transactional
 	public void testService() {
 		User user = new User("foobar");

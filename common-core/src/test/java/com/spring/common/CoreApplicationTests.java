@@ -14,9 +14,8 @@
  * limitations under the License.
  */
 
-package com.spring;
+package com.spring.common;
 
-import com.spring.CoreApplication;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;

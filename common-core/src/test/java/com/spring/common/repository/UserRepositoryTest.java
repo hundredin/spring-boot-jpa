@@ -1,11 +1,12 @@
-package com.spring.repository;
+package com.spring.common.repository;
 
 import com.github.springtestdbunit.annotation.DatabaseSetup;
-import com.spring.domain.User;
+import com.spring.common.domain.User;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
+import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -35,8 +36,10 @@ public class UserRepositoryTest extends AbstractRepositoryTest {
         User user = new User(name);
 		userRepository.save(user);
 
-		User foundUser = userRepository.findOne(user.getId());
+		Optional<User> foundUser = userRepository.findById(user.getId());
 
-		assertThat(foundUser.getName()).isEqualTo(name);
+		foundUser.ifPresent(u -> {
+			assertThat(foundUser.get().getName()).isEqualTo(name);
+		});
 	}
 }

@@ -1,4 +1,4 @@
-package com.spring.domain;
+package com.spring.common.domain;
 
 import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Configurable;

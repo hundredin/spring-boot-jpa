@@ -1,34 +1,42 @@
 subprojects {
     apply plugin: 'java'
     apply plugin: 'idea'
-    apply plugin: 'spring-boot'
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'io.spring.dependency-management'
 
     version = '0.0.1-SNAPSHOT'
 
     sourceCompatibility = javaVersion
     targetCompatibility = javaVersion
-
-
+    
     repositories {
         mavenCentral()
     }
 
     dependencies{
         testCompile "org.springframework.boot:spring-boot-starter-test:${springBootVersion}"
+        testImplementation("org.junit.jupiter:junit-jupiter-api:5.2.0")
+        testRuntime("org.junit.jupiter:junit-jupiter-engine:5.2.0")
+        testCompile("org.mockito:mockito-junit-jupiter:2.18.3")
+
+        testCompile "com.github.springtestdbunit:spring-test-dbunit:1.3.0"
+        testCompile ("org.dbunit:dbunit:2.5.3"){
+            exclude group:"junit", module:"junit"
+        }
     }
 
     // for load time weaving
     test.doFirst {
         jvmArgs = [
-                '-javaagent:' + projectDir + '/../lib/aspectjweaver-1.8.9.jar',
-                '-javaagent:' + projectDir + '/../lib/spring-instrument-4.3.3.RELEASE.jar'
+                '-javaagent:' + projectDir + '/../lib/aspectjweaver-1.8.13.jar',
+                '-javaagent:' + projectDir + '/../lib/spring-instrument-5.1.5RELEASE.jar'
         ]
     }
 
     bootRun {
         jvmArgs = [
-                '-javaagent:' + projectDir + '/../lib/aspectjweaver-1.8.9.jar',
-                '-javaagent:' + projectDir + '/../lib/spring-instrument-4.3.3.RELEASE.jar'
+                '-javaagent:' + projectDir + '/../lib/aspectjweaver-1.8.13.jar',
+                '-javaagent:' + projectDir + '/../lib/spring-instrument-5.1.5.RELEASE.jar'
         ]
     }
 }
@@ -39,10 +47,10 @@ buildscript {
     }
 
     dependencies {
-        classpath "org.springframework.boot:spring-boot-gradle-plugin:1.4.1.RELEASE"
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
     }
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '3.1'
+    gradleVersion = '4.8'
 }
