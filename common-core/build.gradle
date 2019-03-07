@@ -17,6 +17,7 @@ buildscript {
 
 dependencies {
     compile "org.springframework.boot:spring-boot-starter"
+    compile "org.springframework:spring-web"
     compile "org.springframework:spring-jdbc"
     compile "org.springframework:spring-orm"
     compile "org.springframework:spring-aspects"
@@ -30,6 +31,7 @@ dependencies {
     compile 'org.aspectj:aspectjweaver:1.8.13'
     compile 'joda-time:joda-time:2.9.4'
     compile 'org.apache.commons:commons-lang3:3.4'
+    compile "org.apache.httpcomponents:httpclient:4.5.7"
     runtime 'com.h2database:h2:1.4.192'
 
     compile "mysql:mysql-connector-java:5.1.40"
