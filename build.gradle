@@ -23,13 +23,16 @@ subprojects {
         testCompile ("org.dbunit:dbunit:2.5.3"){
             exclude group:"junit", module:"junit"
         }
+
+        compileOnly "org.projectlombok:lombok"
+        annotationProcessor "org.projectlombok:lombok"
     }
 
     // for load time weaving
     test.doFirst {
         jvmArgs = [
                 '-javaagent:' + projectDir + '/../lib/aspectjweaver-1.8.13.jar',
-                '-javaagent:' + projectDir + '/../lib/spring-instrument-5.1.5RELEASE.jar'
+                '-javaagent:' + projectDir + '/../lib/spring-instrument-5.1.5.RELEASE.jar'
         ]
     }
 
@@ -49,8 +52,4 @@ buildscript {
     dependencies {
         classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
     }
-}
-
-task wrapper(type: Wrapper) {
-    gradleVersion = '4.8'
 }

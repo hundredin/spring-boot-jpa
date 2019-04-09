@@ -7,4 +7,5 @@
 target
 .gradle
 build
+out
 common-core/src/main/generated
